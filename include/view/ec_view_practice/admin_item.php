@@ -16,10 +16,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nemu" href="./admin_item.php">商品管理ページ</a>
-                            <a class="nemu" href="./admin_user.php">ユーザー管理ページ</a>
-                            <a class="nemu" href="./admin_category.php">カテゴリー管理ページ</a>
-                            <a class="nemu" href="./top.php">商品購入トップページ</a>
+                            <a class="nemu" href="./admin_item">商品管理ページ</a>
+                            <a class="nemu" href="./admin_user">ユーザー管理ページ</a>
+                            <a class="nemu" href="./admin_category">カテゴリー管理ページ</a>
+                            <a class="nemu" href="./top">商品購入トップページ</a>
                             <p class="nemu">ユーザー名：<?php echo $user_name; ?></p>
                             <a class="nemu" href="./logout.php">ログアウト</a>
                         </div>
@@ -36,7 +36,7 @@
             <li style="color: red;"><?php echo $error; ?></li>
 <?php } ?>
         </ul>
-        <form method="post" enctype="multipart/form-data" action="./admin_item.php">
+        <form method="post" enctype="multipart/form-data" action="./admin_item_post">
             <div><label>商品名: <input type="text" name="name" value="<?php if (isset($name) === TRUE) { echo $name; } ?>"></label></div>
             <div><label>値　段: <input type="text" name="price" value="<?php if (isset($price) === TRUE) { echo $price; } ?>"></label></div>
             <div><label>個　数: <input type="text" name="stocks" value="<?php if (isset($stocks) === TRUE) { echo $stocks; } ?>"></label></div>
@@ -78,7 +78,7 @@
             </tr>
 <?php foreach ($item_lists as $item_list) { ?>
             <tr class="<?php if ($item_list['status'] === '0') { echo 'status_false'; } ?>">
-                <form method="post" action="./admin_item.php">
+                <form method="post" action="./admin_item">
                     <td><img width="100px" src="<?php echo IMG_DIR . $item_list['img']; ?>"></td>
                     <td class="name_width"><?php echo $item_list['category_name']; ?></td>
                     <td class="name_width"><?php echo $item_list['name']; ?></td>
@@ -87,13 +87,13 @@
                     <input type="hidden" name="item_id" value="<?php echo $item_list['id']; ?>">
                     <input type="hidden" name="sql_kind" value="stock_update">
                 </form>
-                <form method="post" action="./admin_item.php">
+                <form method="post" action="./admin_item">
                     <td><input type="submit" value="<?php if ($item_list['status'] === '1') { echo '公開 → 非公開にする'; } else { echo '非公開 → 公開にする'; } ?>"></td>
                     <input type="hidden" name="change_status" value="<?php echo $item_list['status']; ?>">
                     <input type="hidden" name="item_id" value="<?php echo $item_list['id']; ?>">
                     <input type="hidden" name="sql_kind" value="status_update">
                 </form>
-                <form method="post" onsubmit="return submitChk()" action="./admin_item.php">
+                <form method="post" onsubmit="return submitChk()" action="./admin_item">
                     <td><input type="submit" value="削除する"></td>
                     <input type="hidden" name="item_id" value="<?php echo $item_list['id']; ?>">
                     <input type="hidden" name="sql_kind" value="delete">

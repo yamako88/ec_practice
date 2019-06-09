@@ -24,7 +24,7 @@ if (getRequestMethod() === 'POST') {
         $_SESSION['user_id'] = $data[0]['id'];
         if($data[0]['name'] === 'admin' && $data[0]['password'] === 'admin') {
             $_SESSION['is_admin'] = TRUE;
-            header('Location: ./admin_item.php');
+            header('Location: ./AdminItemController.php');
             exit;
         }
         // ログイン済みユーザのホームページへリダイレクト

@@ -103,7 +103,7 @@ if ($request_method === 'POST') {
             if (count($errors) === 0) {
                 // 処理確定
                 dbCommit($link);
-                header('Location: admin_item.php?success=insert');
+                header('Location: AdminItemController.php?success=insert');
                 exit();
             } else {
                 // 処理取消
@@ -171,7 +171,7 @@ if ($request_method === 'POST') {
             if (count($errors) === 0) {
                 // 処理確定
                 dbCommit($link);
-                header('Location: admin_item.php?success=delete');
+                header('Location: AdminItemController.php?success=delete');
                 exit();
             } else {
                 // 処理取消

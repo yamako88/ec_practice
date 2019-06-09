@@ -11,7 +11,7 @@
     <header>
         <div class="header-box">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a href="./top.php">
+                <a href="./top">
                     <img class="logo" src="./images/logo.png" alt="CodeSHOP">
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -19,13 +19,13 @@
                         <div class="navbar-nav">
                             <p class="nemu">ようこそ、<?php echo $user_name; ?> さん</p>
         <?php if (isset($_SESSION['is_admin']) === TRUE && $_SESSION['is_admin'] === TRUE) { ?>
-                            <a class="nemu" href="./admin_item.php">管理画面</a>
+                            <a class="nemu" href="./admin_item">管理画面</a>
         <?php } ?>
                             <a href="./cart.php" class="cart"></a>
-                            <a class="nemu" href="./logout.php">ログアウト</a>
+                            <a class="nemu" href="./logout">ログアウト</a>
                         </div>
                     </div>
-                    <form class="form-inline my-2 my-lg-0" action="./top.php" method="get">
+                    <form class="form-inline my-2 my-lg-0" action="./top" method="get">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search_word" value="<?php if ($search_keyword !== '') { echo $search_keyword; }?>">
                         <input type="hidden" name="sql_kind" value="search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -55,23 +55,6 @@
         <ul class="item-list">
 <?php foreach ($item_lists as $item_list) { ?>
             <li>
-    <!--            <div class="item">-->
-    <!--                <form action="./top.php" method="post">-->
-    <!--                    <img class="item-img" src="<?php echo IMG_DIR . $item_list['img']; ?>" >-->
-    <!--                    <div class="item-info">-->
-    <!--                        <span class="item-name"><?php echo $item_list['name']; ?></span><br>-->
-    <!--                        <span class="item-name">カテゴリー: <?php echo $item_list['category_name']; ?></span>-->
-    <!--                        <span class="item-price">¥<?php echo $item_list['price']; ?></span>-->
-    <!--                    </div>-->
-    <!--<?php if ($item_list['stock'] === '0') { ?>-->
-    <!--                    <span class="red" style="color: red;">売り切れ</span>-->
-    <!--<?php } else { ?>-->
-    <!--                    <input class="cart-btn" type="submit" value="カートに入れる">-->
-    <!--                    <input type="hidden" name="item_id" value="<?php echo $item_list['id']; ?>">-->
-    <!--                    <input type="hidden" name="sql_kind" value="insert_cart">-->
-    <!--<?php } ?>-->
-    <!--                </form>-->
-    <!--            </div>-->
                 <div class="card box-shadow" style="width: 18rem;">
                     <form action="./top.php?page=<?php echo $page; ?>" method="post">
                   <img src="<?php echo IMG_DIR . $item_list['img']; ?>" class="card-img-top card-image" alt="...">

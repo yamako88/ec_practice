@@ -1,7 +1,5 @@
 <?php
-// require_once '../conf/ec_conf_practice/const.php';
 require_once ('conf/Database.php');
-// require_once ('../../conf/Database.php');
 
 class Model
 {
@@ -9,26 +7,36 @@ class Model
 
     public function __construct()
     {
-        try {
-            $this->link = new PDO(
-              // sprintf('mysql:host=%s;dbname=%s;charset=utf8', DataBase::DB_HOST, DataBase::DB_NAME),
-                'mysql:host='.Database::DB_HOST.';dbname='.Database::DB_NAME.';',
-                Database::DB_USER,
-                Database::DB_PASSWD,
-                [
-                    PDO::ATTR_EMULATE_PREPARES => false,
-                ]
-            );
-            // return $link;
-        } catch (PDOException $e) {
-            // $errors[] = 'DBの接続ができていません。。';
-            exit('データベース接続失敗。残念。。' . $e->getMessage());
-        }
+      
     }
 
     public function getLink()
     {
-        return $this->link;
+      try {
+          $this->link = new PDO(
+              'mysql:host='.Database::DB_HOST.';dbname='.Database::DB_NAME.';',
+              Database::DB_USER,
+              Database::DB_PASSWD,
+              [
+                  PDO::ATTR_EMULATE_PREPARES => false,
+              ]
+          );
+          return $this->link;
+      } catch (PDOException $e) {
+          exit('データベース接続失敗。' . $e->getMessage());
+      }
+    }
+
+    public function dbAutocommitOff() {
+        $this->link->beginTransaction();
+    }
+
+    public function dbCommit() {
+        $this->link->commit();
+    }
+
+    public function dbRollback() {
+        $this->link->rollback();
     }
 
     public function executePrepare($prepare)
@@ -40,24 +48,13 @@ class Model
         }
     }
 
-    public function insert($prepare)
+    public function insertDB($prepare)
     {
-        // if ($prepare->execute() === TRUE) {
-        //     return TRUE;
-        // } else {
-        //     return FALSE;
-        // }
-        return $this->executePrepare($prepare);
-    }
-
-    public function update($prepare)
-    {
-        return executePrepare($prepare);
-    }
-
-    public function delete($prepare)
-    {
-        return executePrepare($prepare);
+        if ($prepare->execute() === TRUE) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     }
 
     public function getAsArray($prepare) {
@@ -69,5 +66,47 @@ class Model
             $errors[] = '[error] SQL失敗';
         }
         return $result;
+    }
+
+    public function uniqueDB($prepare) {
+        if ($prepare->execute() === TRUE) {
+            $result = $prepare->fetch(PDO::FETCH_ASSOC);
+            $count = $result['unique'];
+            if ($count > 0) {
+                return FALSE;
+            } else {
+                return TRUE;
+            }
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function alreadyDB($prepare) {
+        if ($prepare->execute() === TRUE) {
+            $result = $prepare->fetch(PDO::FETCH_ASSOC);
+            $count = $result['unique'];
+            if ($count > 0) {
+                return FALSE;
+            } else {
+                return TRUE;
+            }
+        } else {
+            return FALSE;
+        }
+    }
+
+    public function entityAssocArray($assoc_array) {
+        foreach ($assoc_array as $key => $value) {
+            foreach ($value as $keys => $values) {
+                // 特殊文字をHTMLエンティティに変換
+                $assoc_array[$key][$keys] = $this->entityStr($values);
+            }
+        }
+        return $assoc_array;
+    }
+
+    public function entityStr($str) {
+        return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
     }
 }

@@ -11,13 +11,13 @@
     <header>
         <div class="header-box">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a href="./top.php">
+                <a href="./top">
                     <img class="logo" src="./images/logo.png" alt="CodeSHOP">
                 </a>
-                <a href="./login.php" class=" text-right">
+                <a href="./login" class=" text-right">
                     <button type="button" class="btn btn-primary">Log In</button>
                 </a>
-                <a href="./register.php">
+                <a href="./register">
                     <button type="button" class="btn btn-success register-btn">Sign Up</button>
                 </a>
             </nav>
@@ -27,11 +27,11 @@
         <div class="login">
             <div class="main">
                 <p class="sign" align="center">Log In</p>
-                <form method="post" action="./login.php">
+                <form method="post" action="./logincheck">
                   <input class="un " type="text" align="center" placeholder="Username" name="user_name">
                   <input class="pass" type="password" align="center" placeholder="Password" name="password">
                   <input type="submit" value="Log In" class="submit">
-                  <p class="forgot" align="center"><a href="./register.php">New User Registration</a>?</p>
+                  <p class="forgot" align="center"><a href="./register">New User Registration</a>?</p>
                 </form>
                 <ul class="center-msg">
 <?php foreach ($errors as $error) {?>
