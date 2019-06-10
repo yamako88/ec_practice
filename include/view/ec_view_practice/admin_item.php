@@ -21,7 +21,7 @@
                             <a class="nemu" href="./admin_category">カテゴリー管理ページ</a>
                             <a class="nemu" href="./top">商品購入トップページ</a>
                             <p class="nemu">ユーザー名：<?php echo $user_name; ?></p>
-                            <a class="nemu" href="./logout.php">ログアウト</a>
+                            <a class="nemu" href="./logout">ログアウト</a>
                         </div>
                     </div>
                 </div>

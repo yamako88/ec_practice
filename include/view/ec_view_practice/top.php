@@ -21,7 +21,7 @@
         <?php if (isset($_SESSION['is_admin']) === TRUE && $_SESSION['is_admin'] === TRUE) { ?>
                             <a class="nemu" href="./admin_item">管理画面</a>
         <?php } ?>
-                            <a href="./cart.php" class="cart"></a>
+                            <a href="./cart" class="cart"></a>
                             <a class="nemu" href="./logout">ログアウト</a>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
 <?php foreach ($item_lists as $item_list) { ?>
             <li>
                 <div class="card box-shadow" style="width: 18rem;">
-                    <form action="./top.php?page=<?php echo $page; ?>" method="post">
+                    <form action="./top?page=<?php echo $page; ?>" method="post">
                   <img src="<?php echo IMG_DIR . $item_list['img']; ?>" class="card-img-top card-image" alt="...">
                   <div class="card-body">
                     <h5 class="card-title"><?php echo $item_list['name']; ?></h5>

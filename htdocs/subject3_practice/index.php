@@ -8,9 +8,6 @@ require_once('./controller/AdminItemController.php');
 
 $request = new Dispatcher();
 $url = $request->getPathInfo();
-var_dump($url);
-
-var_dump($_SERVER['REQUEST_URI'], $_SERVER['SCRIPT_NAME']);
 
 switch ($url) {
   case '/register':

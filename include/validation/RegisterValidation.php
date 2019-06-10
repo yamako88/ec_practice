@@ -1,6 +1,5 @@
 <?php
 require_once('Validation.php');
-// require_once('../../model/UserModel.php');
 
 class RegisterValidation extends Validation
 {

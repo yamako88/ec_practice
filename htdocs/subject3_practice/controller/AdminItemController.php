@@ -105,7 +105,7 @@ class AdminItemController extends SessionController
                 $img_name = $_FILES['new_img']['name'];
 
                 $new_name = $imageValidation->createRandFileName();
-                if ($imageValidation->checkImageExt($tmp_name, $new_name) !== TRUE) {
+                if ($imageValidation->checkImageExt($tmp_name, $new_name) === FALSE) {
                     $errors[] = '正しい拡張子で画像を選んでください';
                 } else {
                         $new_name = $imageValidation->checkImageExt($tmp_name, $new_name);
@@ -145,7 +145,7 @@ class AdminItemController extends SessionController
             }
         }
 
-//        include_once '../../include/view/ec_view_practice/admin_item.php';
+        include_once '../../include/view/ec_view_practice/admin_item.php';
 
     }
 

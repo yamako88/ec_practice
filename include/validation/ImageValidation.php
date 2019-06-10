@@ -58,7 +58,7 @@ class ImageValidation extends Validation
 
     public function uploadImageFile($new_name, $tmp_name) {
         global $errors;
-        $img_path = IMG_DIR . basename($new_name);
+        $img_path = './images/' . basename($new_name);
         // 自分のフォルダに移動
         if(move_uploaded_file($tmp_name, $img_path)){
             return $img_path. 'のアップロードに成功しました';

@@ -29,6 +29,7 @@ class TopController extends SessionController
     $success   = array();
     $user_name = '';
     $password  = '';
+    $search_keyword = '';
 
     $user_name = $this->user_name;
 
@@ -59,7 +60,6 @@ class TopController extends SessionController
       $model = new Model();
         // 特殊文字を変換
       $item_lists = $model->entityAssocArray($item_data);
-      $search_keyword = $model->entityStr($search_word);
 
     include_once '../../include/view/ec_view_practice/top.php';
   }
