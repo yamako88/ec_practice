@@ -3,28 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fd0b3596-ae7f-4939-826d-d64a9f6bbb27" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/admin_category.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/admin_item.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/admin_user.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/controller/AdminItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/htdocs/subject3_practice/controller/AdminItemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/controller/TopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/htdocs/subject3_practice/controller/TopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/finish.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/htdocs/subject3_practice/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/logout.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/register.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/htdocs/subject3_practice/top.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/conf/ec_conf_practice/const.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/validation/ImageValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/validation/ImageValidation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/validation/RegisterValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/validation/RegisterValidation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/view/ec_view_practice/admin_category.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/view/ec_view_practice/admin_item.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/view/ec_view_practice/admin_item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/view/ec_view_practice/admin_user.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/view/ec_view_practice/cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/view/ec_view_practice/finish.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/view/ec_view_practice/top.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/view/ec_view_practice/top.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/model/ec_model_practice/function.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,25 +27,27 @@
           <entry key="htaccess" value="1" />
           <entry key="jpg" value="2" />
           <entry key="md" value="3" />
-          <entry key="php" value="55" />
+          <entry key="php" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="2" />
           <entry key="Markdown" value="3" />
-          <entry key="PHP" value="55" />
+          <entry key="PHP" value="57" />
           <entry key="htaccess" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="19" />
+          <entry key="md" value="1335" />
           <entry key="php" value="1365" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="Markdown" value="1335" />
           <entry key="PHP" value="1365" />
           <entry key="PLAIN_TEXT" value="19" />
         </counts>
@@ -78,7 +60,9 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor />
+              <first_editor relative-caret-position="565">
+                <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+              </first_editor>
               <second_editor />
             </state>
           </provider>
@@ -98,6 +82,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/model/conf/Database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -157,6 +150,7 @@
         <option value="$PROJECT_DIR$/htdocs/subject3_practice/controller/TopController.php" />
         <option value="$PROJECT_DIR$/include/view/ec_view_practice/top.php" />
         <option value="$PROJECT_DIR$/include/view/ec_view_practice/admin_item.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -194,6 +188,20 @@
               <item name="ec_practice" type="462c0819:PsiDirectoryNode" />
               <item name="htdocs" type="462c0819:PsiDirectoryNode" />
               <item name="subject3_practice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ec_practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ec_practice" type="462c0819:PsiDirectoryNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="subject3_practice" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ec_practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ec_practice" type="462c0819:PsiDirectoryNode" />
+              <item name="htdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="subject3_practice" type="462c0819:PsiDirectoryNode" />
+              <item name="route" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ec_practice" type="b2602c69:ProjectViewProjectNode" />
@@ -268,12 +276,12 @@
       <option name="presentableId" value="Default" />
       <updated>1560092141403</updated>
       <workItem from="1560092142743" duration="9618000" />
-      <workItem from="1560171182231" duration="2585000" />
+      <workItem from="1560171182231" duration="5250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12203000" />
+    <option name="totallyTimeSpent" value="14868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1666" y="23" width="1694" height="797" extended-state="0" />
@@ -349,24 +357,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/model/ec_model_practice/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/validation/ImageValidation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/model/conf/Database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
@@ -530,10 +524,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/model/conf/Database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/model/ec_model_practice/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11135">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="565">
+            <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
+          </first_editor>
           <second_editor />
         </state>
       </provider>
