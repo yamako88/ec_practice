@@ -92,32 +92,29 @@ class AdminItemController extends SessionController
             $errors[] = '正しくカテゴリーを選択してください';
         }
 
-        if (count($errors) !== 0) {
-            header('Location: ./error.php');
+        if (count($errors) === 0) {
+            $imageValidation = new ImageValidation();
+            if ($imageValidation->checkImageFile($_FILES, $_FILES['new_img']) !== TRUE) :
+                $errors[] = '画像が投稿できません';
+            elseif ($imageValidation->checkImageSize($_FILES['new_img']['size']) !== TRUE) :
+                $errors[] = '画像サイズを2MB以内にしてください。';
+            elseif ($imageValidation->checkImageEmpty($_FILES['new_img']['tmp_name'], $_FILES['new_img']['name']) !== TRUE) :
+                $errors[] = '画像を選択してください。';
+            else :
+                $tmp_name = $_FILES['new_img']['tmp_name'];
+                $img_name = $_FILES['new_img']['name'];
+
+                $new_name = $imageValidation->createRandFileName();
+                if ($imageValidation->checkImageExt($tmp_name, $new_name) === FALSE) {
+                    $errors[] = '正しい拡張子で画像を選んでください';
+                } else {
+                    $new_name = $imageValidation->checkImageExt($tmp_name, $new_name);
+                }
+                if (count($errors) === 0) {
+                    $imageValidation->uploadImageFile($new_name, $tmp_name);
+                }
+            endif;
         }
-
-
-        $imageValidation = new ImageValidation();
-        if ($imageValidation->checkImageFile($_FILES, $_FILES['new_img']) !== TRUE) :
-            $errors[] = '画像が投稿できません';
-        elseif ($imageValidation->checkImageSize($_FILES['new_img']['size']) !== TRUE) :
-            $errors[] = '画像サイズを2MB以内にしてください。';
-        elseif ($imageValidation->checkImageEmpty($_FILES['new_img']['tmp_name'], $_FILES['new_img']['name']) !== TRUE) :
-            $errors[] = '画像を選択してください。';
-        else :
-            $tmp_name = $_FILES['new_img']['tmp_name'];
-            $img_name = $_FILES['new_img']['name'];
-
-            $new_name = $imageValidation->createRandFileName();
-            if ($imageValidation->checkImageExt($tmp_name, $new_name) === FALSE) {
-                $errors[] = '正しい拡張子で画像を選んでください';
-            } else {
-                $new_name = $imageValidation->checkImageExt($tmp_name, $new_name);
-            }
-            if (count($errors) === 0) {
-                $imageValidation->uploadImageFile($new_name, $tmp_name);
-            }
-        endif;
 
         if (count($errors) === 0) {
             $model = new Model();
