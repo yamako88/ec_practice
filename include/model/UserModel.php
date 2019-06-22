@@ -42,7 +42,7 @@ class UserModel extends Model
 
     function getLoginUser($user_name, $password) {
         $prepare = $this->link->prepare(
-           'SELECT id, name, password
+            'SELECT id, name, password
             FROM EC_users
             WHERE name = ?
             AND password = ?'

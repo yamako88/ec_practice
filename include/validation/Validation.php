@@ -3,28 +3,28 @@
 class Validation
 {
 
-  public function __construct()
-  {
+    public function __construct()
+    {
 
-  }
+    }
 
-  
 
-  public function checkEmpty($value) {
-      if ($value === '') {
-          return FALSE;
-      } else {
-          return TRUE;
-      }
-  }
 
-  public function checkHalfwidthAlphanumeric($value) {
-      if (preg_match('/\A[a-z\d]{6,16}+\z/i', $value) !==1) {
-          return FALSE;
-      } else {
-          return TRUE;
-      }
-  }
+    public function checkEmpty($value) {
+        if ($value === '') {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+
+    public function checkHalfwidthAlphanumeric($value) {
+        if (preg_match('/\A[a-z\d]{6,16}+\z/i', $value) !==1) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
 
     public function checkLength($value, $length) {
         if (mb_strlen($value) > $length) {

@@ -10,58 +10,58 @@ class SessionController
 
     public function sessionStart()
     {
-    // セッション開始
-    session_start();
+        // セッション開始
+        session_start();
     }
 
     public function loggedIn()
     {
-    // セッション変数からログイン済みか確認
-    if (isset($_SESSION['user_id']) === TRUE) {
-       // ログイン済みの場合、ホームページへリダイレクト
-       header('Location: ./top');
-       exit;
-    }
+        // セッション変数からログイン済みか確認
+        if (isset($_SESSION['user_id']) === TRUE) {
+            // ログイン済みの場合、ホームページへリダイレクト
+            header('Location: ./top');
+            exit;
+        }
     }
 
     public function checkLogin()
     {
-    // セッション変数からuser_id取得
-    if (isset($_SESSION['user_id']) === TRUE) {
-       return $_SESSION['user_id'];
-    } else {
-       // 非ログインの場合、ログインページへリダイレクト
-       header('Location: ./login');
-       exit;
-    }
+        // セッション変数からuser_id取得
+        if (isset($_SESSION['user_id']) === TRUE) {
+            return $_SESSION['user_id'];
+        } else {
+            // 非ログインの場合、ログインページへリダイレクト
+            header('Location: ./login');
+            exit;
+        }
     }
 
     public function checkUserName($name) {
-      // ユーザ名を取得できたか確認
-      if (isset($name)) {
-         return $name;
-      } else {
-         // ユーザ名が取得できない場合、ログアウト処理へリダイレクト
-         header('Location: ./logout');
-         exit;
-      }
+        // ユーザ名を取得できたか確認
+        if (isset($name)) {
+            return $name;
+        } else {
+            // ユーザ名が取得できない場合、ログアウト処理へリダイレクト
+            header('Location: ./logout');
+            exit;
+        }
     }
 
     public function getPostData($key)
     {
-    $str = '';
-    if (isset($_POST[$key]) === TRUE) {
-        $str = $_POST[$key];
-    }
-    return $str;
+        $str = '';
+        if (isset($_POST[$key]) === TRUE) {
+            $str = $_POST[$key];
+        }
+        return $str;
     }
 
     public function getGetData($key) {
-      $str = '';
-      if (isset($_GET[$key]) === TRUE) {
-          $str = $_GET[$key];
-      }
-      return $str;
+        $str = '';
+        if (isset($_GET[$key]) === TRUE) {
+            $str = $_GET[$key];
+        }
+        return $str;
     }
 
     public function setCookieYear($cookie_name, $value) {

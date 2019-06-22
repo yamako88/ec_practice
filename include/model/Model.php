@@ -7,24 +7,24 @@ class Model
 
     public function __construct()
     {
-      
+
     }
 
     public function getLink()
     {
-      try {
-          $this->link = new PDO(
-              'mysql:host='.Database::DB_HOST.';dbname='.Database::DB_NAME.';',
-              Database::DB_USER,
-              Database::DB_PASSWD,
-              [
-                  PDO::ATTR_EMULATE_PREPARES => false,
-              ]
-          );
-          return $this->link;
-      } catch (PDOException $e) {
-          exit('データベース接続失敗。' . $e->getMessage());
-      }
+        try {
+            $this->link = new PDO(
+                'mysql:host='.Database::DB_HOST.';dbname='.Database::DB_NAME.';',
+                Database::DB_USER,
+                Database::DB_PASSWD,
+                [
+                    PDO::ATTR_EMULATE_PREPARES => false,
+                ]
+            );
+            return $this->link;
+        } catch (PDOException $e) {
+            exit('データベース接続失敗。' . $e->getMessage());
+        }
     }
 
     public function dbAutocommitOff() {
